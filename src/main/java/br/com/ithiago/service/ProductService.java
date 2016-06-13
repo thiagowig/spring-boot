@@ -4,5 +4,5 @@ import br.com.ithiago.model.Product;
 
 public interface ProductService {
 
-	Product findByDescription(String description);
+	Product findByDescription(String description) throws Exception;
 }

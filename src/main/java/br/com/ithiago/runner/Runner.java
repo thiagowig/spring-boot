@@ -5,9 +5,9 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
-//@SpringBootApplication(scanBasePackages="br.com.ithiago.controller")
+//@SpringBootApplication(scanBasePackages="br.com.ithiago")
 
-@Configuration
+@Configuration("application-context.xml")
 @EnableAutoConfiguration
 @ComponentScan(basePackages="br.com.ithiago")
 public class Runner {

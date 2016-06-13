@@ -2,9 +2,12 @@ package br.com.ithiago.model;
 
 public class Product {
 
-	private final Long id;
+	private Long id;
 	
-	private final String description;
+	private String description;
+	
+	public Product() {		
+	}
 	
 	public Product(Long id, String description) {
 		this.id = id;
@@ -17,6 +20,14 @@ public class Product {
 
 	public String getDescription() {
 		return description;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 	
 }
