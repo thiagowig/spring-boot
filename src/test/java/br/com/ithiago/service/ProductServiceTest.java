@@ -29,10 +29,15 @@ public class ProductServiceTest {
 		ProductService productService = new ProductServiceImpl(restClient);
 		Product product = productService.findByDescription("Motorola");
 		
-		asserProduct(product);
+		assertProduct(product);
+	}
+	
+	@Test
+	public void doingAError() {
+		assertEquals(true, false);
 	}
 
-	private void asserProduct(Product product) {
+	private void assertProduct(Product product) {
 		Long expectedId = 1L;
 		String expectedDescription = "Motorola startac";		
 		
