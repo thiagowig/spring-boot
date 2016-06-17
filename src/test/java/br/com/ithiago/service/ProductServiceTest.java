@@ -31,6 +31,11 @@ public class ProductServiceTest {
 		
 		assertProduct(product);
 	}
+	
+	@Test
+	public void doingAError() {
+		assertEquals(true, false);
+	}
 
 	private void assertProduct(Product product) {
 		Long expectedId = 1L;
