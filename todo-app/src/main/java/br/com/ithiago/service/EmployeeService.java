@@ -7,4 +7,6 @@ import br.com.ithiago.model.Employee;
 public interface EmployeeService {
 
 	List<Employee> findAll();
+	
+	void add(Employee employee);
 }
