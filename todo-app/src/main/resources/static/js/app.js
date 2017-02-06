@@ -14,7 +14,7 @@ $(document).ready(function () {
 		})
 	})
 
-	$('#insertButton').click(function() {
+	$('#insertButton').click(function () {
 		var employee = {
 			name: $('#nameInsert').val(),
 			age: $('#ageInsert').val(),
@@ -26,14 +26,41 @@ $(document).ready(function () {
 			method: 'POST',
 			data: JSON.stringify(employee),
 			contentType: "application/json"
-		})
-		.then(function(data, result, response) {
+		}).then(function (data, result, response) {
 			alert('Data saved if success')
-		}).catch(function(err) {
+		}).catch(function (err) {
 			alert('Error when trying to save data')
 		})
 	})
+
+	$.ajax({
+		url: '/employee/',
+		method: 'GET',
+	}).then(function (data, result, response) {
+		var fullTableData = []
+
+		data.forEach(function (each) {
+			var tableData = []
+			tableData.push(each.name)
+
+			fullTableData.push(tableData)
+		})
+
+
+		$('#employeesTable').dataTable({
+			"data": [
+				fullTableData
+			],
+		})
+	}).catch(function (err) {
+		alert('Error when trying to save data')
+	})
+
 })
+
+
+
+
 
 /*
 $(document).ready(function () {
